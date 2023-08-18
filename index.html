@@ -1,36 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sabin Shrestha</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sabin Shrestha</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
     <!-- header design -->
     <header class="header">
-        <a href="#" class="logo">Sabin</a>
-
-        <nav class="navbar">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Education</a>
-            <a href="#">Skills</a>
-            <a href="#">Contact</a>
-
-        </nav>
-
+        <div class="container">
+            <nav class="navbar">
+                <img src="" alt="Sabin" class="Sabin">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="main">
+                <h2>Sabin Shrestha</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi maiores
+                    iusto repellat laboriosam, impedit fugiat laudantium omnis libero
+                    provident aliquam iste quos, suscipit nulla recusandae inventore?
+                    Quaerat illum qui cupiditate?
+                </p>
+            </div>
+        </div>
     </header>
+    <!--- about section --->
+    <div id="about">
+        <div class="containter">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/me.jpeg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
+                        sequi minus esse in quia dolor incidunt obcaecati debitis dolorem numquam asperiores ullam,
+                        eum eveniet illo optio animi. In, ipsam hic.</p>
 
-    <div class="main">
-        <h2>Sabin Shrestha</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-            Quasi maiores iusto repellat laboriosam, impedit fugiat 
-            laudantium omnis libero provident aliquam iste quos, suscipit
-            nulla recusandae inventore? Quaerat illum qui cupiditate?</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing Wep/App interfaces</li>
+                            <li><span>UI/UX</span><br>Designing Wep/App interfaces</li>
+                            <li><span>UI/UX</span><br>Designing Wep/App interfaces</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <!-- <ul>
+                            <li><span>UI/UX</span><br>Designing Wep/App interfaces</li>
+                            <li><span>UI/UX</span><br>Designing Wep/App interfaces</li>
+                            <li><span>UI/UX</span><br>Designing Wep/App interfaces</li>
+                        </ul> -->
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing Wep/App interfaces</li>
+                            <li><span>UI/UX</span><br>Designing Wep/App interfaces</li>
+                            <li><span>UI/UX</span><br>Designing Wep/App interfaces</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
     
-    <script src="script.js"></script>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+
 </body>
+
 </html>
